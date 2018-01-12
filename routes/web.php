@@ -1,5 +1,10 @@
 <?php
 
+
+
+use Carbon\Carbon;
+
+use App\Newsletter as Newsletter;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,12 +21,4 @@ Route::get('/', function () {
 });
 
 
-Route::get('test3', function () {
-    $usuario               = new App\Newsletter;
 
-    $usuario->name         = 'luis eduardo lopez';
-    $usuario->email        = 'luis.lopez@misena.edu.co';
-    $usuario->save();
-    
-    return $usuario;
-});

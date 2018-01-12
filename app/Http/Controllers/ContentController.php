@@ -4,7 +4,11 @@
 
 namespace App\Http\Controllers;
 
+use DB;
 
+use Carbon\Carbon;
+
+use App\Newsletter as Newsletter;
 
 
 use Illuminate\Http\Request;
@@ -42,6 +46,15 @@ class ContentController extends Controller
     public function store(Request $request)
     {
        
+        DB::table('newsletter')->insert([
+            "name" => 'luis lopez martinez',
+            "email" => 'luis.lopez@misena.edu.co',
+            "created_at" => Carbon::now(),
+            "updated_at" => Carbon::now(),
+
+            ]);
+
+         return "hecho";
 
 
     }

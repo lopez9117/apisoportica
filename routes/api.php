@@ -23,11 +23,13 @@ Route::group(['prefix' => 'v1'], function(){
 
 	Route::get('/', 'ContentController@index')->name('index');
 
+	Route::post('/store', 'ContentController@store')->name('store');
+
+
+
 	Route::get('/newsletter', 'NewsleterController@index');
 
 	Route::post('/newsletter', 'NewsleterController@store');
-
-
 
 
 });

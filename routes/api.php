@@ -18,7 +18,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 
-Route::group(['prefix' => 'v1','middleware' => 'Cors'], function(){
+Route::group(['prefix' => 'v1','middleware' => 'cors'], function(){
 
 	//Route::get('/', 'ContentController@index')->name('index');
 
@@ -28,7 +28,7 @@ Route::group(['prefix' => 'v1','middleware' => 'Cors'], function(){
 
 	Route::get('/createnewsletter', 'NewsleterController@create');
 
-	Route::post('/newsletter',['as' =>'newsletter','uses' => 'NewsleterController@store']);
+	Route::put('/newsletter',['as' =>'newsletter','uses' => 'NewsleterController@store']);
 
 
 });

@@ -18,18 +18,22 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 
-Route::group(['prefix' => 'v1','middleware' => 'cors'], function(){
+Route::group(['prefix' => 'v1','middleware' => 'Cors'], function(){
 
+	//Route::get('/', 'ContentController@index')->name('index');
 
-	Route::get('/', 'ContentController@index')->name('index');
-
-	Route::post('/store', 'ContentController@store')->name('store');
-
-
+	//Route::post('/store', 'ContentController@store')->name('store');
 
 	Route::get('/newsletter', 'NewsleterController@index');
 
-	Route::post('/newsletter', 'NewsleterController@store');
+	Route::get('/createnewsletter', 'NewsleterController@create');
+
+	Route::post('/newsletter',['as' =>'newsletter','uses' => 'NewsleterController@store']);
 
 
 });
+
+
+	Route::get('/contacto', 'ContactController@index');
+
+	Route::post('/newsletter', 'ContactController@store');

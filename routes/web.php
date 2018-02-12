@@ -17,8 +17,11 @@ use App\Newsletter as Newsletter;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('dashboard');
 });
+
+
+Route::resource('noticias', 'NoticiasController');
 
 
 

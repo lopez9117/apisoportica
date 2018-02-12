@@ -8,6 +8,8 @@ class Newsletter extends Model
 {
     //
 
+    protected $table = 'newsletter';
+
      protected $fillable = [
         'name', 'email',
     ];

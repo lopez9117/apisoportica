@@ -2,15 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use DB;
-
-use Carbon\Carbon;
-
-use App\Newsletter as Newsletter;
-
 use Illuminate\Http\Request;
 
-class NewsleterController extends Controller
+class ContactController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,11 +13,7 @@ class NewsleterController extends Controller
      */
     public function index()
     {
-        //return "listado del newsletter";
-
-        $newsletters = DB::table('newsletter')->get();
-        
-        return $newsletters;  
+        //
     }
 
     /**
@@ -34,9 +24,6 @@ class NewsleterController extends Controller
     public function create()
     {
         //
-        return view('home.vue');
-        
-
     }
 
     /**
@@ -47,30 +34,7 @@ class NewsleterController extends Controller
      */
     public function store(Request $request)
     {
-     
-        
-
-
-            $newsletter = new Newsletter();
-            $newsletter->name = $request->input('name');
-            $newsletter->email = $request->input('email');
-
-        $newsletter->save();
-              
-    
-
-          //Guardar newsletter
-         /*DB::table('newsletter')->insert([
-            "name" => $request->input('name'),
-            "email" => $request->input('email'),
-            "created_at" => Carbon::now(),
-            "updated_at" => Carbon::now(),
-
-            ]);*/
-
-        //  return response()->json(['message' =>'Newsletter Saved']);
-
-            
+        //
     }
 
     /**

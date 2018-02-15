@@ -58,10 +58,6 @@ class NewsleterController extends Controller
 
             if($request->isMethod('put')){
 
-       
-              
-    
-
           //Guardar newsletter
          DB::table('newsletter')->insert([
             "name" => $request->input('name'),

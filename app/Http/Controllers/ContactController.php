@@ -2,6 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use DB;
+
+use Carbon\Carbon;
+
+use App\Contact as Contact;
+
 use Illuminate\Http\Request;
 
 class ContactController extends Controller
@@ -14,6 +20,10 @@ class ContactController extends Controller
     public function index()
     {
         //
+        $contacts = DB::table('contacts')->get();
+
+        return $contacts;
+
     }
 
     /**

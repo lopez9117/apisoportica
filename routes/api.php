@@ -34,10 +34,10 @@ Route::group(['prefix' => 'v1','middleware' => 'cors'], function(){
 });
 
 Route::group(['prefix' => 'v1','middleware' => 'cors'], function(){
-	
+
 Route::get('/contacto', ['as' =>'contacto','uses' => 'ContactController@index']);
 	
-Route::put('/contacto',['as' =>'contacto','uses' => 'ContactController@store']);
+Route::put('/contacto',['as' =>'crearcontacto','uses' => 'ContactController@store']);
 
 
 });

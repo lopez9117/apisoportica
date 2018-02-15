@@ -36,6 +36,6 @@ Route::group(['prefix' => 'v1','middleware' => 'cors'], function(){
 
 Route::get('/contacto', ['as' =>'contacto','uses' => 'ContactController@index']);
 	
-Route::put('/contacto', 'ContactController@store');
+Route::put('/contacto',['as' =>'contacto','uses' => 'ContactController@store']);
 
 

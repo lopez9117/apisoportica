@@ -9,6 +9,7 @@ use Carbon\Carbon;
 use App\Contact as Contact;
 
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class ContactController extends Controller
 {
@@ -46,7 +47,7 @@ class ContactController extends Controller
     {
         if($request->isMethod('put')){
 
-            //Guardar newsletter
+            //Guardar Contacto
            DB::table('contacts')->insert([
               "name" => $request->input('name'),
               "telephone" => $request->input('telephone'),

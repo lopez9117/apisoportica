@@ -44,7 +44,24 @@ class ContactController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if($request->isMethod('put')){
+
+            //Guardar newsletter
+           DB::table('contacts')->insert([
+              "name" => $request->input('name'),
+              "telephone" => $request->input('telephone'),
+              "email" => $request->input('email'),
+              "city" => $request->input('city'),
+              "affair" => $request->input('affair'),
+              "comments" => $request->input('comments'),
+              "messages" => $request->input('messages'),
+              "created_at" => Carbon::now(),
+              "updated_at" => Carbon::now(),
+  
+              ]);
+  
+           return response()->json(['created' =>'true'])->setStatusCode(Response::HTTP_CREATED, Response::$statusTexts[Response::HTTP_CREATED]);
+          }
     }
 
     /**

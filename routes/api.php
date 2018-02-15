@@ -30,11 +30,12 @@ Route::group(['prefix' => 'v1','middleware' => 'cors'], function(){
 
 	Route::put('/newsletter',['as' =>'newsletter','uses' => 'NewsleterController@store']);
 
-	Route::get('/contacto', 'ContactController@index');
-
-	Route::put('/contacto', 'ContactController@store');
-
-
+	
 });
+
+
+Route::get('/contacto', ['as' =>'contacto','uses' => 'ContactController@index']);
+	
+Route::put('/contacto', 'ContactController@store');
 
 
